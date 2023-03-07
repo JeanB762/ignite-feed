@@ -21,8 +21,8 @@ const posts = [
           'Acabei de subir mais um projeto no meu portifa. É um projeto que fiz   no NLW Return, evento da Rocketseat. O nome do projeto é DoctorCare 🚀',
       },
       {
-        type: 'link ',
-        content: '👉 <a href=""> jane.design/doctorcare</a>',
+        type: 'link',
+        content: 'jane.design/doctorcare',
       },
     ],
     publishedAt: new Date('2023-03-06 13:53:28'),
@@ -43,7 +43,7 @@ const posts = [
       },
       {
         type: 'link ',
-        content: '👉 <a href="">https://github.com/jeanb762</a>',
+        content: 'https://github.com/jeanb762',
       },
     ],
     publishedAt: new Date('2023-03-06 17:00:00'),
