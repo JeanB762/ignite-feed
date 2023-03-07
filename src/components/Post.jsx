@@ -25,12 +25,14 @@ export function Post({ author, content, publishedAt }) {
 
   function handleNewCommentChange(event) {
     setNewComment(event.target.value);
-    // setComments([...comments, newComment]);
   }
-  useEffect(() => {
-    console.log(newComment);
-  }, [newComment]);
 
+  function deleteComment(commentToDelete) {
+    const newCommentsWithoutDeletedOne = comments.filter(
+      (comment) => comment !== commentToDelete
+    );
+    setComments(newCommentsWithoutDeletedOne);
+  }
   return (
     <article className={styles.post}>
       <header>
@@ -46,12 +48,12 @@ export function Post({ author, content, publishedAt }) {
         </time>
       </header>
       <div className={styles.content}>
-        {content.map((line, key) => {
+        {content.map((line) => {
           if (line.type === 'paragraph') {
-            return <p key={key}>{line.content}</p>;
+            return <p key={line.content}>{line.content}</p>;
           } else if (line.type === 'link') {
             return (
-              <p key={key}>
+              <p key={line.content}>
                 <a href='#'>{line.content}</a>;
               </p>
             );
@@ -72,8 +74,14 @@ export function Post({ author, content, publishedAt }) {
         </footer>
       </form>
       <div className={styles.commentList}>
-        {comments.map((comment, key) => {
-          return <Comment key={key} content={comment} />;
+        {comments.map((comment) => {
+          return (
+            <Comment
+              key={comment}
+              content={comment}
+              onDeleteComment={deleteComment}
+            />
+          );
         })}
       </div>
     </article>
