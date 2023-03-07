@@ -7,7 +7,7 @@ export function Comment({ content, onDeleteComment }) {
   const [likeCount, setLikeCount] = useState(0);
 
   function handleLikeComment() {
-    setLikeCount(likeCount + 1);
+    setLikeCount((state) => state + 1);
   }
 
   function handleDelete() {
@@ -16,7 +16,7 @@ export function Comment({ content, onDeleteComment }) {
 
   return (
     <div className={styles.comment}>
-      <Avatar hasBorder={false} src='https://github.com/jeanb762.png' />
+      <Avatar hasBorder={false} src='https://avatars2.githubusercontent.com/u/126234' />
       <div className={styles.commentBox}>
         <div className={styles.commentContent}>
           <header>

@@ -8,7 +8,7 @@ const posts = [
   {
     id: 1,
     author: {
-      avatarUrl: 'https://github.com/jeanb762.png',
+      avatarUrl: 'https://avatars2.githubusercontent.com/u/126234',
       name: 'Jean Borges',
       role: 'Web Developer',
     },
